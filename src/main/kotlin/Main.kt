@@ -36,7 +36,7 @@ fun ChunkBuffer.offerChunk(input: InputStream): Boolean {
     return false
 }
 fun ChunkBuffer.pollRest(): List<Byte> {
-    val rest = List<Byte?>(4) { poll() }
+    val rest = List<Byte?>(capacity) { poll() }
     return rest.filterNotNull()
 }
 
